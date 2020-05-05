@@ -19,17 +19,17 @@ import {
 
 const Header = ({ currentUser, hidden }) => (
   <HeaderContainer>
-    <LogoContainer to='/'>
+    <LogoContainer to={process.env.PUBLIC_URL + '/'}>
       <Logo className='logo' />
     </LogoContainer>
     <OptionsContainer>
-      <OptionLink to='/shop'>SHOP</OptionLink>
+      <OptionLink to={process.env.PUBLIC_URL + '/shop'}>SHOP</OptionLink>
       {currentUser ? (
         <OptionLink as='div' onClick={() => auth.signOut()}>
           SIGN OUT
         </OptionLink>
       ) : (
-        <OptionLink to='/signin'>SIGN IN</OptionLink>
+        <OptionLink to={process.env.PUBLIC_URL + '/signin'}>SIGN IN</OptionLink>
       )}
       <CartIcon />
     </OptionsContainer>
